@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rdl_dynamics</name>
+  <version>0.9.1</version>
+  <description>The rdl_dynamics package</description>
+
+  <maintainer email="jlack1987@gmail.com">jordan</maintainer>
+
+  <license>zlib</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>eigen</depend>
+  <!-- Doxygen and graphviz are actually doc. depends, but the <doc_depend> tag is ignored by rosdep, so using regular <depend> for now. -->
+  <depend>doxygen</depend>
+  <depend>graphviz</depend>
+  <test_depend>gtest</test_depend>
+  <test_depend>lcov</test_depend>
+  <test_depend>rdl_cmake</test_depend>
+
+  <export>
+
+  </export>
+</package>
