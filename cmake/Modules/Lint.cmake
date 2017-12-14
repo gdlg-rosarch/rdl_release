@@ -34,7 +34,7 @@ function(lint_cpp)
         set(run_check TRUE)
         if(NOT CPPCHECK_PATH)
             set(run_check FALSE)
-            message(WARN "cppcheck not found! C++ code analysis target will NOT be built. To fix this, install cppcheck.")
+            message(WARNING "cppcheck not found! C++ code analysis target will NOT be built. To fix this, install cppcheck.")
         endif() # NOT CPPCHECK_PATH
     endif()
 
@@ -42,7 +42,7 @@ function(lint_cpp)
         find_program(CPPCHECK_JUNIT_PATH cppcheck_junit)
         if(NOT CPPCHECK_JUNIT_PATH)
             set(run_check FALSE)
-            message(WARN "cppcheck_junit not found! C++ code analysis target will NOT be built. To fix this, 'pip install cppcheck-junit.'")
+            message(WARNING "cppcheck_junit not found! C++ code analysis target will NOT be built. To fix this, 'pip install cppcheck-junit.'")
         endif() # NOT CPPCHECK_JUNIT_PATH
     endif()
 
