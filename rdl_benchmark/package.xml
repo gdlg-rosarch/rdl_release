@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>rdl_benchmark</name>
-  <version>0.9.3</version>
+  <version>0.9.4</version>
   <description>The rdl_benchmark package</description>
 
   <maintainer email="jlack1987@gmail.com">jordan</maintainer>
@@ -11,6 +11,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <depend>rdl_dynamics</depend>
   <depend>rdl_urdfreader</depend>
+  <depend>rdl_cmake</depend>
   <test_depend>gtest</test_depend>
 
   <export>
