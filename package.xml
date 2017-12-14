@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
     <name>rdl_urdfreader</name>
-    <version>0.9.3</version>
+    <version>0.9.4</version>
     <description>The rdl_urdfreader package</description>
 
     <maintainer email="jlack1987@gmail.com">jordan</maintainer>
