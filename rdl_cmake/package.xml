@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>rdl_cmake</name>
-  <version>0.9.3</version>
+  <version>0.9.4</version>
   <description>The rdl_cmake package</description>
 
   <maintainer email="jlack1987@gmail.com">jordan</maintainer>
@@ -9,6 +9,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <test_depend>cppcheck</test_depend>
+  <test_depend>lcov</test_depend>
 
   <export>
 

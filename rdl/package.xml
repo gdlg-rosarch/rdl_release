@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>rdl</name>
-  <version>0.9.3</version>
+  <version>0.9.4</version>
   <description>The rdl meta-package</description>
 
   <maintainer email="jlack1987@gmail.com">jordan</maintainer>

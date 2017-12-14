@@ -535,7 +535,7 @@ TEST_F(Human36, calcCentroidalMomentumMatrixDot)
 
     ADot_num = (1.0/h)*(A2-A1);
 
-    EXPECT_TRUE(unit_test_utils::checkVectorNdEpsilonClose(ADot_num*qdot,ADot*qdot,1e-4));
+    EXPECT_TRUE(unit_test_utils::checkVectorNdEpsilonClose(ADot_num*qdot,ADot*qdot,1e-3));
 }
 
 TEST_F(RdlUtilsTests, calcCentroidalMomentumMatrixDotSphericalJoint)
