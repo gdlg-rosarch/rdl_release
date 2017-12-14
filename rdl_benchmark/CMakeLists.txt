@@ -1,7 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.3)
 PROJECT (rdl_benchmark)
 
-find_package(catkin REQUIRED COMPONENTS rdl_dynamics rdl_urdfreader)
+find_package(catkin REQUIRED COMPONENTS rdl_cmake rdl_dynamics rdl_urdfreader)
 
 # check c++11 / c++0x
 include(CheckCXXCompilerFlag)
