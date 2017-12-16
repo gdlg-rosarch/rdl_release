@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>rdl_dynamics</name>
-  <version>0.9.4</version>
+  <version>0.9.5</version>
   <description>The rdl_dynamics package</description>
 
   <maintainer email="jlack1987@gmail.com">jordan</maintainer>
@@ -15,6 +15,7 @@
   <depend>graphviz</depend>
   <test_depend>gtest</test_depend>
   <test_depend>rdl_cmake</test_depend>
+  <test_depend>lcov</test_depend>
 
   <export>
 

@@ -14,17 +14,12 @@ find_program(GCOV_PATH gcov)
 find_program(LCOV_PATH lcov)
 find_program(GENHTML_PATH genhtml)
 
-IF(NOT GCOV_PATH)
-    MESSAGE(FATAL_ERROR "gcov not found! Aborting...")
-ENDIF() # NOT GCOV_PATH
+set(run TRUE)
 
-IF(NOT LCOV_PATH)
-    MESSAGE(FATAL_ERROR "lcov not found! Aborting...")
-ENDIF() # NOT LCOV_PATH
-
-IF(NOT GENHTML_PATH)
-    MESSAGE(FATAL_ERROR "genhtml not found! Aborting...")
-ENDIF() # NOT GENHTML_PATH
+IF(NOT GCOV_PATH OR NOT LCOV_PATH OR NOT GENHTML_PATH)
+    set(run FALSE)
+    MESSAGE(WARNING "To run code coverage, you must have gcov, lcov, and genhtml! One or all of them were not found...")
+ENDIF()
 
 set(CMAKE_CXX_FLAGS_COVERAGE
     "-g -O0 --coverage -fprofile-arcs -ftest-coverage"
@@ -68,17 +63,19 @@ add_custom_target(${PROJECT_NAME}_coverage_prep
 )
 
 function(coverage_add_target tgt)
-    add_dependencies(${tgt} ${PROJECT_NAME}_coverage_prep)
+    if(${run})
+        add_dependencies(${tgt} ${PROJECT_NAME}_coverage_prep)
 
-    add_custom_target(run_coverage_${PROJECT_NAME}
-    COMMAND ${LCOV_PATH} --directory ${CMAKE_BINARY_DIR} --base-directory ${PROJECT_SOURCE_DIR} --capture --output-file ${PROJECT_NAME}.info
-    COMMAND ${LCOV_PATH} --extract ${PROJECT_NAME}.info '${PROJECT_SOURCE_DIR}/*' --output-file ${PROJECT_NAME}.info.cleaned
-    COMMAND ${GENHTML_PATH} -o ${COVERAGE_DIR} --show-details --legend ${PROJECT_NAME}.info.cleaned
-    COMMAND ${CMAKE_COMMAND} -E remove ${PROJECT_NAME}.info ${PROJECT_NAME}.info.cleaned
-    COMMAND ${CMAKE_COMMAND} -E echo "Coverage report found in: ${COVERAGE_DIR}"
- 
-    WORKING_DIRECTORY ${COVERAGE_DIR}
-    DEPENDS ${tgt}
-    )
+        add_custom_target(run_coverage_${PROJECT_NAME}
+        COMMAND ${LCOV_PATH} --directory ${CMAKE_BINARY_DIR} --base-directory ${PROJECT_SOURCE_DIR} --capture --output-file ${PROJECT_NAME}.info
+        COMMAND ${LCOV_PATH} --extract ${PROJECT_NAME}.info '${PROJECT_SOURCE_DIR}/*' --output-file ${PROJECT_NAME}.info.cleaned
+        COMMAND ${GENHTML_PATH} -o ${COVERAGE_DIR} --show-details --legend ${PROJECT_NAME}.info.cleaned
+        COMMAND ${CMAKE_COMMAND} -E remove ${PROJECT_NAME}.info ${PROJECT_NAME}.info.cleaned
+        COMMAND ${CMAKE_COMMAND} -E echo "Coverage report found in: ${COVERAGE_DIR}"
+     
+        WORKING_DIRECTORY ${COVERAGE_DIR}
+        DEPENDS ${tgt}
+        )
+    endif()
 
 endfunction()
