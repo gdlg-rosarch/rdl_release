@@ -1,36 +1,50 @@
-Master: [![build status](https://gitlab.com/jlack/rdl/badges/master/build.svg)](https://gitlab.com/jlack/rdl/commits/master)
-[![coverage report](https://gitlab.com/jlack/rdl/badges/master/coverage.svg)](https://gitlab.com/jlack/rdl/commits/master)
+urdfreader - load models from (URDF Unified Robot Description Format) files
+Copyright (c) 2012 Martin Felis <martin.felis@iwr.uni-heidelberg.de>
 
-Develop: [![build status](https://gitlab.com/jlack/rdl/badges/develop/build.svg)](https://gitlab.com/jlack/rdl/commits/develop)
-[![coverage report](https://gitlab.com/jlack/rdl/badges/develop/coverage.svg)](https://gitlab.com/jlack/rdl/commits/develop)
+Requirements
+============
 
-# [RDL API Documentation](https://jlack.gitlab.io/rdl/doxygen)
+This addon depends on urdfdom to load and access the model data in the URDF
+files.
 
-# Disclaimer
+See https://github.com/ros/urdfdom for more details on how to
+install urdfdom.
 
-RDL is a dynamics library that is a derivative of Rigid Body Dynamics Library(RBDL) written, owned, and copyrighted by Martin Felis. I, Jordan Lack, do not 
-wish to misrepresent any of the works contained within this project that were not originally created by me as my own in any way.
+Warning
+=======
 
-The original work from which RDL is based upon can be found [here](https://bitbucket.org/rbdl).
+This code is not properly tested as I do not have a proper urdf robot
+model. If anyone has one and also some reference values that should come
+out for the dynamics computations, please let me know.
 
-## RDL - Robot Dynamics Library
+Licensing
+=========
 
-RDL is a c++ library derived from Rigid Body Dynamics Library(RBDL) for computing dynamics and kinematics of rigid body systems, however, kinematics 
-in RDL are handled differently than in the original work of RBDL. In RDL, a number of spatial objects(SpatialForce, SpatialMotion, SpatialInertia, FramePoint, FrameVector, etc) are 
-provided that, when used, provide runtime checks that ensure rules on the frames these objects are expressed in are obeyed.
+This code is published under the zlib license, however some parts of the
+CMake scripts are taken from other projects and are licensed under
+different terms.
 
-## Licensing
+Full license text:
 
-The library is published under the very permissive zlib free software
-license which should allow you to use the software wherever you need. 
-See the LICENSE file for the detailed language and permissions of the 
-zlib license. The License file for the original work from which RDL 
-is a derivative can be found in the file RBDL_LICENSE.
+-------
+urdfreader - load models from URDF (Unified Robot Description Format) files
+Copyright (c) 2012-2015 Martin Felis <martin.felis@iwr.uni-heidelberg.de>
 
-## Credits
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
 
-First and foremost I would like to give due credit to Martin Felis, the creator of RBDL of which this work is a derivative. 
-Additionally, RBDL is a fantastic library, and should you find that RDL doesn't meet your needs you may consider giving RBDL a try. It may better fit your needs/application. 
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
 
-I would also like to acknowledge the folks at the [IHMC Robotics Lab](http://robots.ihmc.us/). Their dynamics libary(which is written in Java) provides runtime frame checks, and after 
-working with them and seeing first hand how it enables very quick development of control algorithms and helps prevent a lot of bugs I knew the world of c++ needed something similar. If you are interested in writing code for robots and Java is your thing then definitely check out IHMC's open source stuff [here](https://github.com/ihmcrobotics). 
+   1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+
+   2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+
+   3. This notice may not be removed or altered from any source
+   distribution.
