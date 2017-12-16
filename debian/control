@@ -1,0 +1,12 @@
+Source: ros-kinetic-rdl-benchmark
+Section: misc
+Priority: extra
+Maintainer: jordan <jlack1987@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), libgtest-dev, ros-kinetic-catkin, ros-kinetic-rdl-cmake, ros-kinetic-rdl-dynamics, ros-kinetic-rdl-urdfreader
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-rdl-benchmark
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-rdl-cmake, ros-kinetic-rdl-dynamics, ros-kinetic-rdl-urdfreader
+Description: The rdl_benchmark package
