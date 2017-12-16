@@ -1,0 +1,12 @@
+Source: ros-kinetic-rdl-cmake
+Section: misc
+Priority: extra
+Maintainer: jordan <jlack1987@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), cppcheck, lcov, ros-kinetic-catkin
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-rdl-cmake
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Description: The rdl_cmake package
